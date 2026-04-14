@@ -38,7 +38,7 @@ Dynamic Slicing: Stakeholders can filter the entire report by Salesperson or Cat
 ## 1. Executive Dashboard (Power BI)
 ![image](https://github.com/NivedhReddy2048/Cloud-Analytics-BI-Dashboard/blob/main/Visualization_PowerBi.png?raw=true)
 ## 2. Strategic Diagnostic Audit (Python)
-![image](https://github.com/NivedhReddy2048/Cloud-Analytics-BI-Dashboard/blob/main/Visualization_PowerBi.png?raw=true)
+![image](https://github.com/NivedhReddy2048/Cloud-Analytics-BI-Dashboard/blob/main/Python_Pareto_Analysis.png?raw=true)
 ## 3. The Big Data Aggregation Engine (AWS Athena)
 ![image](https://github.com/NivedhReddy2048/Cloud-Analytics-BI-Dashboard/blob/main/Visualization_PowerBi.png?raw=true)
 ## 4. Market Sensitivity & Profit Study (Python)
