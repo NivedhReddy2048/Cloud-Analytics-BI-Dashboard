@@ -1,1 +1,33 @@
-
+WITH MonthlySales AS (
+    SELECT 
+        DATE_TRUNC('month', CAST(Date AS TIMESTAMP)) as sales_month,
+        Region,
+        Category,
+        SUM(Revenue) as total_revenue,
+        SUM(Profit) as total_profit,
+        SUM(Units_Sold) as total_units
+    FROM "zs_analytics_db"."cleaned_parquet_data"
+    GROUP BY 1, 2, 3
+),
+GrowthMetrics AS (
+    SELECT 
+        sales_month,
+        Region,
+        Category,
+        total_revenue,
+        -- Calculate Month-over-Month Revenue Growth
+        LAG(total_revenue) OVER (PARTITION BY Region, Category ORDER BY sales_month) as prev_month_revenue,
+        total_profit,
+        (total_profit / NULLIF(total_revenue, 0)) * 100 as profit_margin_pct
+    FROM MonthlySales
+)
+SELECT 
+    sales_month,
+    Region,
+    Category,
+    total_revenue,
+    ROUND(((total_revenue - prev_month_revenue) / NULLIF(prev_month_revenue, 0)) * 100, 2) as mom_growth_pct,
+    ROUND(total_profit, 2) as total_profit,
+    ROUND(profit_margin_pct, 2) as margin_pct
+FROM GrowthMetrics
+ORDER BY sales_month DESC, total_revenue DESC;
