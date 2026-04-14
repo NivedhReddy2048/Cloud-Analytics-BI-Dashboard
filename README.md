@@ -35,8 +35,9 @@ Regional Drill-Downs: Interactive bar charts showing performance by territory.
 Dynamic Slicing: Stakeholders can filter the entire report by Salesperson or Category to identify specific team performance.
 
 # 🖼️ Project Visuals
-1. Executive Dashboard (Power BI)
-2. Advanced Analytics (Python)
+# 1. Executive Dashboard (Power BI)
+![image](https://github.com/NivedhReddy2048/Cloud-Analytics-BI-Dashboard/blob/main/Visualization_PowerBi.png?raw=true)
+3. Advanced Analytics (Python)
 # 🚀 How to Use
 Review the notebooks/ folder for the Python EDA logic.
 
